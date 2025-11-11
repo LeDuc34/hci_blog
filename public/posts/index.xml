@@ -6,21 +6,35 @@
     <description>Recent content in Posts on victormasseboeuf</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 18 Sep 2025 15:16:04 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 19 Oct 2025 15:16:04 +0200</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>First Post</title>
-      <link>http://localhost:1313/posts/my-first-post/</link>
-      <pubDate>Thu, 18 Sep 2025 15:16:04 +0200</pubDate>
-      <guid>http://localhost:1313/posts/my-first-post/</guid>
-      <description>&lt;h2 id=&#34;first-post&#34;&gt;First post&lt;/h2&gt;&#xA;&lt;p&gt;testing if its working&lt;/p&gt;</description>
+      <title>HW4 - Three Lectures on Computing Evolution</title>
+      <link>http://localhost:1313/posts/hw4/</link>
+      <pubDate>Sun, 19 Oct 2025 15:16:04 +0200</pubDate>
+      <guid>http://localhost:1313/posts/hw4/</guid>
+      <description>&lt;h1 id=&#34;homework-4&#34;&gt;&#xD;&#xA;  Homework 4&#xD;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#homework-4&#34;&gt;&#xD;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xD;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h1&gt;&#xD;&#xA;&lt;h2 id=&#34;lecture-10-the-shape-of-smartphones&#34;&gt;&#xD;&#xA;  LECTURE 10: The Shape of Smartphones&#xD;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#lecture-10-the-shape-of-smartphones&#34;&gt;&#xD;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xD;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&#xD;&#xA;&lt;h3 id=&#34;the-evolution&#34;&gt;&#xD;&#xA;  The Evolution&#xD;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#the-evolution&#34;&gt;&#xD;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xD;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h3&gt;&#xD;&#xA;&lt;p&gt;&lt;strong&gt;Early Era (2000-2007):&lt;/strong&gt; Physical keyboards dominated. Think BlackBerry and Nokia - thick devices with tiny screens because typing mattered more than viewing.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;iPhone Revolution (2007-2010):&lt;/strong&gt; The shift to full touchscreen killed the keyboard. The 3.5-inch slab design became standard as content consumption replaced communication as the primary use.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HW3</title>
+      <link>http://localhost:1313/posts/hw3/</link>
+      <pubDate>Sat, 18 Oct 2025 15:16:04 +0200</pubDate>
+      <guid>http://localhost:1313/posts/hw3/</guid>
+      <description>&lt;h1 id=&#34;homework-3&#34;&gt;&#xD;&#xA;  Homework 3&#xD;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#homework-3&#34;&gt;&#xD;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xD;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h1&gt;&#xD;&#xA;&lt;p&gt;&lt;em&gt;Content coming soon&amp;hellip;&lt;/em&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HW2</title>
+      <link>http://localhost:1313/posts/hw2/</link>
+      <pubDate>Sat, 11 Oct 2025 15:16:04 +0200</pubDate>
+      <guid>http://localhost:1313/posts/hw2/</guid>
+      <description>&lt;h1 id=&#34;homework-2&#34;&gt;&#xD;&#xA;  Homework 2&#xD;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#homework-2&#34;&gt;&#xD;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xD;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h1&gt;&#xD;&#xA;&lt;h2 id=&#34;lecture-4&#34;&gt;&#xD;&#xA;  Lecture 4&#xD;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#lecture-4&#34;&gt;&#xD;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xD;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&#xD;&#xA;&lt;p&gt;Dr. Young-Ho Kim is a Research Scientist at NAVER AI Lab leading the Human-Computer Interaction Research Group. His work focuses on an important area of HCI that bridges personal wellbeing and artificial intelligence.&lt;/p&gt;&#xA;&lt;h3 id=&#34;current-research-focus&#34;&gt;&#xD;&#xA;  Current Research Focus&#xD;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#current-research-focus&#34;&gt;&#xD;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xD;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h3&gt;&#xD;&#xA;&lt;p&gt;Dr. Kim designs, develops, and evaluates Personal Informatics technologies that help people better understand themselves and make positive behavioral changes. His recent work is particularly timely and impactful: he&amp;rsquo;s investigating how to leverage generative AI in Personal Informatics systems to address the lifelong challenges faced by marginalized populations.&lt;/p&gt;</description>
     </item>
     <item>
       <title>HW1</title>
       <link>http://localhost:1313/posts/hw1/</link>
       <pubDate>Thu, 18 Sep 2025 15:16:04 +0200</pubDate>
       <guid>http://localhost:1313/posts/hw1/</guid>
-      <description>&lt;h1 id=&#34;homework-1&#34;&gt;Homework 1&lt;/h1&gt;&#xA;&lt;h2 id=&#34;affordances&#34;&gt;Affordances&lt;/h2&gt;&#xA;&lt;h3 id=&#34;bad-one&#34;&gt;Bad one&lt;/h3&gt;&#xA;&lt;p&gt;An example of bad affordance is the numlock button on my laptop&amp;rsquo;s keyboard.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/locknum.jpg&#34; alt=&#34;alt&#34;&gt;&lt;br&gt;&#xA;Indeed i can&amp;rsquo;t see if the num lock is activated or not.&#xA;A way to improve could be to add a little led to inform the user about the current mod.&lt;/p&gt;&#xA;&lt;h3 id=&#34;good-one&#34;&gt;Good one&lt;/h3&gt;&#xA;&lt;p&gt;A good design I&amp;rsquo;ve found in my daily life is the way to authentificated to my gym.&#xA;To enter in the gym, you need to show the badge and put your index on a detector to see if the fingerprint matches with the badge owner. &lt;br&gt;&#xA;It seems a bit too much but infact it is quite fast :  not very demanding for the users. &lt;br&gt;&#xA;It solve the problem of badge sharing between users : with this design is quite diffcult to defraud.&lt;/p&gt;</description>
+      <description>&lt;h1 id=&#34;homework-1&#34;&gt;&#xD;&#xA;  Homework 1&#xD;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#homework-1&#34;&gt;&#xD;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xD;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h1&gt;&#xD;&#xA;&lt;h2 id=&#34;affordances&#34;&gt;&#xD;&#xA;  Affordances&#xD;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#affordances&#34;&gt;&#xD;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xD;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&#xD;&#xA;&lt;h3 id=&#34;bad-example-numlock-button&#34;&gt;&#xD;&#xA;  Bad Example: Numlock Button&#xD;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#bad-example-numlock-button&#34;&gt;&#xD;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xD;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h3&gt;&#xD;&#xA;&lt;p&gt;An example of bad affordance is the numlock button on my laptop&amp;rsquo;s keyboard.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/locknum.jpg&#34; alt=&#34;Numlock button&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;The problem is that I can&amp;rsquo;t see if the num lock is activated or not. A way to improve this design would be to add a small LED indicator to inform the user about the current mode.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

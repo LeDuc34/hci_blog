@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <title>
+  HW4 - Three Lectures on Computing Evolution · victormasseboeuf
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Victor Masseboeuf">
+<meta name="description" content="Analysis of smartphone evolution, ubiquitous computing, and future MR applications">
+<meta name="keywords" content="blog,developer,personal">
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="HW4 - Three Lectures on Computing Evolution">
+  <meta name="twitter:description" content="Analysis of smartphone evolution, ubiquitous computing, and future MR applications">
+
+<meta property="og:url" content="http://localhost:1313/posts/hw4/">
+  <meta property="og:site_name" content="victormasseboeuf">
+  <meta property="og:title" content="HW4 - Three Lectures on Computing Evolution">
+  <meta property="og:description" content="Analysis of smartphone evolution, ubiquitous computing, and future MR applications">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-10-19T15:16:04+02:00">
+    <meta property="article:modified_time" content="2025-10-19T15:16:04+02:00">
+
+
+
+
+<link rel="canonical" href="http://localhost:1313/posts/hw4/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.css" media="screen">
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.css" media="screen">
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="http://localhost:1313/">
+      victormasseboeuf
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/projects/">Projects</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/contact/">Contact me</a>
+            </li>
+          
+        
+        
+          
+          
+          
+            
+          
+            
+              
+                <li class="navigation-item menu-separator">
+                  <span>|</span>
+                </li>
+                
+              
+              <li class="navigation-item">
+                <a href="/pt-br/">🇧🇷</a>
+              </li>
+            
+          
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="http://localhost:1313/posts/hw4/">
+              HW4 - Three Lectures on Computing Evolution
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+              <time datetime="2025-10-19T15:16:04&#43;02:00">
+                October 19, 2025
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              6-minute read
+            </span>
+          </div>
+          
+          
+          
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <h1 id="homework-4">
+  Homework 4
+  <a class="heading-link" href="#homework-4">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<h2 id="lecture-10-the-shape-of-smartphones">
+  LECTURE 10: The Shape of Smartphones
+  <a class="heading-link" href="#lecture-10-the-shape-of-smartphones">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="the-evolution">
+  The Evolution
+  <a class="heading-link" href="#the-evolution">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p><strong>Early Era (2000-2007):</strong> Physical keyboards dominated. Think BlackBerry and Nokia - thick devices with tiny screens because typing mattered more than viewing.</p>
+<p><strong>iPhone Revolution (2007-2010):</strong> The shift to full touchscreen killed the keyboard. The 3.5-inch slab design became standard as content consumption replaced communication as the primary use.</p>
+<p><strong>Screen Size Wars (2010-2017):</strong> Displays grew from 4&quot; to 6&quot;+. Devices got thinner. Video streaming and social media demanded bigger screens.</p>
+<p><strong>Bezel Elimination (2017-Present):</strong> Edge-to-edge displays with notches and punch-holes maximized screen real estate. Glass-sandwich designs became universal.</p>
+<h3 id="why-shapes-changed">
+  Why Shapes Changed
+  <a class="heading-link" href="#why-shapes-changed">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li><strong>Technology improved</strong>: Better batteries, efficient processors, flexible displays</li>
+<li><strong>User behavior shifted</strong>: From communication device to multimedia consumption tool</li>
+<li><strong>Manufacturing evolved</strong>: Better materials, precision engineering</li>
+<li><strong>Market pressure</strong>: Differentiation through design</li>
+<li><strong>Ergonomics</strong>: Balancing screen size with usability</li>
+</ul>
+<h3 id="whats-next">
+  What&rsquo;s Next?
+  <a class="heading-link" href="#whats-next">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p><strong>My prediction: Adaptive form factors through foldables and flexible displays.</strong></p>
+<p><strong>Why this makes sense:</strong></p>
+<ol>
+<li>
+<p><strong>Technology is ready</strong>: Foldables exist (Samsung Fold, Huawei Mate X) but expensive. Prices will drop as manufacturing scales.</p>
+</li>
+<li>
+<p><strong>Solves the paradox</strong>: People want large screens AND portable devices. Foldables deliver both.</p>
+</li>
+<li>
+<p><strong>Multiple use cases</strong>: Pocket-sized when folded, tablet-sized when open.</p>
+</li>
+<li>
+<p><strong>Material science progress</strong>: Ultra-thin glass, flexible OLED, and durable hinges improve rapidly.</p>
+</li>
+</ol>
+<p><strong>Long-term (10-15 years):</strong></p>
+<ul>
+<li><strong>Rollable screens</strong> that extend from pen-sized devices</li>
+<li><strong>Wearable computing</strong> integrated into glasses/clothing</li>
+<li><strong>Shape-shifting materials</strong> that physically morph based on use</li>
+<li><strong>Ambient computing interfaces</strong> using any surface as a display through AR</li>
+</ul>
+<h2 id="lecture-11-the-computer-for-the-21st-century">
+  LECTURE 11: The Computer for the 21st Century
+  <a class="heading-link" href="#lecture-11-the-computer-for-the-21st-century">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="weisers-vision-1991">
+  Weiser&rsquo;s Vision (1991)
+  <a class="heading-link" href="#weisers-vision-1991">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Mark Weiser imagined a world where <strong>&ldquo;specialized elements of hardware and software will be so ubiquitous that no one will notice their presence.&rdquo;</strong></p>
+<p><strong>Core Concepts:</strong></p>
+<p><strong>Embodied Virtuality</strong>: Bring computing into the physical world, not force humans into virtual worlds.</p>
+<p><strong>Three Device Types:</strong></p>
+<ul>
+<li><strong>Tabs</strong> (inch-scale): Wearable devices, hundreds per room</li>
+<li><strong>Pads</strong> (foot-scale): Paper-like computers you grab and use anywhere, dozens per room</li>
+<li><strong>Boards</strong> (yard-scale): Wall-sized displays, one or two per room</li>
+</ul>
+<p><strong>Three Waves of Computing:</strong></p>
+<ol>
+<li>Many people, one computer (mainframe era)</li>
+<li>One person, one computer (PC era - &ldquo;uneasy symbiosis&rdquo;)</li>
+<li>Many computers, one person (ubiquitous era)</li>
+</ol>
+<p><strong>The Philosophy</strong>: Computers should <strong>vanish into the background</strong> and be <strong>&ldquo;as refreshing as taking a walk in the woods&rdquo;</strong> - not frustrating and attention-demanding.</p>
+<h3 id="are-we-there-yet">
+  Are We There Yet?
+  <a class="heading-link" href="#are-we-there-yet">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p><strong>✅ What We&rsquo;ve Achieved:</strong></p>
+<ol>
+<li><strong>The devices exist</strong>: Smartwatches (tabs), smartphones/tablets (pads), smart TVs (boards)</li>
+<li><strong>Universal connectivity</strong>: Wi-Fi and 5G everywhere</li>
+<li><strong>Location awareness</strong>: GPS in every pocket</li>
+<li><strong>IoT everywhere</strong>: Smart homes, voice assistants, connected appliances</li>
+<li><strong>Invisible functions</strong>: Contactless payments, cloud sync, automatic updates</li>
+<li><strong>Multiple computers per person</strong>: We interact with 10+ devices daily</li>
+</ol>
+<p><strong>❌ What We&rsquo;re Missing:</strong></p>
+<ol>
+<li>
+<p><strong>SCREENS DEMAND TOO MUCH ATTENTION</strong></p>
+<ul>
+<li>Weiser wanted calm, invisible computing</li>
+<li>We got attention-extraction machines designed for &ldquo;engagement&rdquo;</li>
+<li>More trapped by screens than ever (social media, notifications)</li>
+<li>Technology is NOT calm</li>
+</ul>
+</li>
+<li>
+<p><strong>PRIVACY NIGHTMARE</strong></p>
+<ul>
+<li>Weiser warned: &ldquo;hundreds of computers sensing people&hellip;have the potential to make totalitarianism seem sheerest anarchy&rdquo;</li>
+<li>This happened through corporate surveillance capitalism</li>
+<li>Data breaches, tracking, loss of control</li>
+<li>Can&rsquo;t opt out without losing functionality</li>
+</ul>
+</li>
+<li>
+<p><strong>NO INTEROPERABILITY</strong></p>
+<ul>
+<li>Apple vs. Google vs. Amazon walled gardens</li>
+<li>Can&rsquo;t &ldquo;grab any pad&rdquo; like Weiser envisioned</li>
+<li>Fragmented standards, manual setup required</li>
+</ul>
+</li>
+<li>
+<p><strong>TECHNOLOGY IS STILL VISIBLE</strong></p>
+<ul>
+<li>Constant charging, updating, managing</li>
+<li>Notifications interrupt constantly</li>
+<li>Error messages break the experience</li>
+</ul>
+</li>
+<li>
+<p><strong>FAILED THE &ldquo;WALK IN WOODS&rdquo; TEST</strong></p>
+<ul>
+<li>Should reduce information overload - instead increased it</li>
+<li>Should be calming - instead causes anxiety</li>
+<li>Should disappear - instead dominates attention</li>
+</ul>
+</li>
+</ol>
+<h3 id="the-fundamental-irony">
+  The Fundamental Irony
+  <a class="heading-link" href="#the-fundamental-irony">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>We built the <strong>technical infrastructure</strong> (devices, networks, sensors) but <strong>inverted the philosophy</strong>:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Weiser&rsquo;s Vision</th>
+          <th>What We Got</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Calm technology</td>
+          <td>Attention economy</td>
+      </tr>
+      <tr>
+          <td>Serves individuals</td>
+          <td>Individuals serve platforms</td>
+      </tr>
+      <tr>
+          <td>Human-centered</td>
+          <td>Algorithm-centered</td>
+      </tr>
+      <tr>
+          <td>Invisible computing</td>
+          <td>Unavoidable screens</td>
+      </tr>
+      <tr>
+          <td>Reduces overload</td>
+          <td>Creates overload</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="what-needs-to-happen">
+  What Needs to Happen
+  <a class="heading-link" href="#what-needs-to-happen">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p><strong>Technical:</strong></p>
+<ul>
+<li>Energy harvesting (no charging)</li>
+<li>True edge computing (local processing)</li>
+<li>Universal open standards</li>
+<li>Natural interfaces (not screen-based)</li>
+</ul>
+<p><strong>Social/Policy:</strong></p>
+<ul>
+<li>Privacy by design</li>
+<li>Data ownership rights</li>
+<li>Interoperability mandates</li>
+<li>Regulation of manipulative design</li>
+<li>Ethical AI frameworks</li>
+</ul>
+<p><strong>Philosophical Shift:</strong></p>
+<ul>
+<li>From &ldquo;engagement&rdquo; to &ldquo;enablement&rdquo;</li>
+<li>From &ldquo;personalization&rdquo; to &ldquo;privacy&rdquo;</li>
+<li>From &ldquo;smart&rdquo; to &ldquo;calm&rdquo;</li>
+<li>Measure success by how quickly users accomplish goals, not time-on-platform</li>
+</ul>
+<h3 id="conclusion">
+  Conclusion
+  <a class="heading-link" href="#conclusion">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p><strong>We&rsquo;re living in ubiquitous computing without the calm.</strong></p>
+<p>We have the computers everywhere, but not the &ldquo;refreshing walk in the woods&rdquo; feeling. We got the devices but lost the vision. Weiser&rsquo;s paper wasn&rsquo;t just a technical prediction—it was a <strong>moral vision</strong> for how technology should enhance human life.</p>
+<h2 id="lecture-12-most-downloaded-mr-apps-future">
+  LECTURE 12: Most Downloaded MR Apps (Future)
+  <a class="heading-link" href="#lecture-12-most-downloaded-mr-apps-future">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>When MR headsets are as common as smartphones, what apps will dominate? Not &ldquo;killer apps&rdquo; that drive adoption, but everyday essentials.</p>
+<h3 id="top-3-most-downloaded">
+  Top 3 Most Downloaded
+  <a class="heading-link" href="#top-3-most-downloaded">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<h4 id="1-universal-spatial-workspace">
+  1. Universal Spatial Workspace
+  <a class="heading-link" href="#1-universal-spatial-workspace">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p><strong>What:</strong> Complete productivity environment replacing physical monitors.</p>
+<p><strong>Features:</strong></p>
+<ul>
+<li>Infinite virtual screens anywhere in space</li>
+<li>Persistent setups per location (home, coffee shop, office)</li>
+<li>Holographic colleague presence</li>
+<li>Gesture-based window management</li>
+</ul>
+<p><strong>Why #1:</strong></p>
+<ul>
+<li><strong>Replaces expensive hardware</strong>: No $1000+ monitors needed</li>
+<li><strong>Work from anywhere</strong>: Full setup wherever you are</li>
+<li><strong>Universal need</strong>: Everyone who works digitally needs this</li>
+<li><strong>Clear ROI</strong>: Obvious productivity and cost benefits</li>
+<li><strong>Network effects</strong>: As companies adopt, individuals must follow</li>
+</ul>
+<p><em>Like email on smartphones - fundamental, not optional.</em></p>
+<h4 id="2-live-language--cultural-overlay">
+  2. Live Language &amp; Cultural Overlay
+  <a class="heading-link" href="#2-live-language--cultural-overlay">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p><strong>What:</strong> Real-time translation and cultural context for the physical world.</p>
+<p><strong>Features:</strong></p>
+<ul>
+<li>Instant translation of all visible text (signs, menus, documents)</li>
+<li>Live speech translation with suggested responses</li>
+<li>Cultural etiquette guidance (when to bow, gift-giving norms)</li>
+<li>Historical context about locations, buildings, art</li>
+<li>Social cues (formality preferences)</li>
+<li>Accessibility features (subtitles, audio descriptions)</li>
+</ul>
+<p><strong>Why Top 3:</strong></p>
+<ul>
+<li><strong>Global utility</strong>: Useful for travelers, multicultural environments</li>
+<li><strong>Removes barriers</strong>: Language is no longer an obstacle</li>
+<li><strong>Safety</strong>: Navigate confidently in unfamiliar places</li>
+<li><strong>Educational</strong>: Passive language learning</li>
+<li><strong>Inclusivity</strong>: Makes world accessible to people with disabilities</li>
+</ul>
+<p><em>Like Google Translate, but seamlessly integrated into vision rather than requiring phone lookup.</em></p>
+<h4 id="3-spatial-memory--navigation-assistant">
+  3. Spatial Memory &amp; Navigation Assistant
+  <a class="heading-link" href="#3-spatial-memory--navigation-assistant">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p><strong>What:</strong> AI that remembers where everything is and helps you never lose anything.</p>
+<p><strong>Features:</strong></p>
+<ul>
+<li><strong>Object tracking</strong>: &ldquo;Where are my keys?&rdquo; → AR arrow points</li>
+<li><strong>Spatial memory</strong>: Where you parked, where items are stored</li>
+<li><strong>Social memory</strong>: Face recognition with context (&ldquo;You met John at Sarah&rsquo;s party&rdquo;)</li>
+<li><strong>Smart reminders</strong>: &ldquo;Buy milk&rdquo; appears when near grocery store</li>
+<li><strong>Route optimization</strong>: Best path through IKEA/airport</li>
+<li><strong>Attention direction</strong>: Highlights important things you might miss</li>
+<li><strong>Breadcrumb trails</strong>: Visual path in unfamiliar buildings</li>
+</ul>
+<p><strong>Why Top 3:</strong></p>
+<ul>
+<li><strong>Universal frustration</strong>: Everyone loses things</li>
+<li><strong>Time savings</strong>: Average person spends 2.5 days/year looking for lost items</li>
+<li><strong>Cognitive augmentation</strong>: Extends human memory naturally</li>
+<li><strong>Immediate value</strong>: Useful from first use</li>
+<li><strong>Accessibility</strong>: Crucial for elderly, memory conditions</li>
+<li><strong>Safety</strong>: Emergency exits, escape routes</li>
+</ul>
+<p><em>Like &ldquo;Find My&rdquo; but for everything, seamlessly integrated into daily life.</em></p>
+<h3 id="why-these-three">
+  Why These Three?
+  <a class="heading-link" href="#why-these-three">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>They share characteristics ensuring mass adoption:</p>
+<ul>
+<li>✓ <strong>Universal applicability</strong> - everyone needs these</li>
+<li>✓ <strong>Daily utility</strong> - used multiple times per day</li>
+<li>✓ <strong>Clear value proposition</strong> - solve obvious problems</li>
+<li>✓ <strong>Cost savings</strong> - replace expensive hardware or save time</li>
+<li>✓ <strong>Low friction</strong> - enhance existing activities</li>
+<li>✓ <strong>Network effects</strong> - more valuable as adoption grows</li>
+<li>✓ <strong>Accessibility</strong> - help people with disabilities</li>
+</ul>
+<h3 id="the-pattern">
+  The Pattern
+  <a class="heading-link" href="#the-pattern">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Just like smartphones, the most downloaded apps make MR <strong>indispensable rather than entertaining</strong>. Productivity, communication, and utility dominate entertainment in sustained usage.</p>
+<p>The apps that win are those that become so useful you can&rsquo;t imagine life without them—not the flashiest demos.</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2019 -
+    
+    2025
+     Victor Masseboeuf 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.js"></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>
