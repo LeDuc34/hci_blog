@@ -19,11 +19,19 @@ series = []
 
 **Early Era (2000-2007):** Physical keyboards dominated. Think BlackBerry and Nokia - thick devices with tiny screens because typing mattered more than viewing.
 
+<img src="/images/blackberry.jpg" alt="Early smartphones" width="300" height="500">
+
 **iPhone Revolution (2007-2010):** The shift to full touchscreen killed the keyboard. The 3.5-inch slab design became standard as content consumption replaced communication as the primary use.
+
+![iPhone Revolution](/images/iphone.jpeg)
 
 **Screen Size Wars (2010-2017):** Displays grew from 4" to 6"+. Devices got thinner. Video streaming and social media demanded bigger screens.
 
+![Screen Size Wars](/images/large-phone.jpg)
+
 **Bezel Elimination (2017-Present):** Edge-to-edge displays with notches and punch-holes maximized screen real estate. Glass-sandwich designs became universal.
+
+![Bezel Elimination](/images/bezels.jpg)
 
 ### Why Shapes Changed
 

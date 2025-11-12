@@ -19,7 +19,7 @@ series = []
 
 An example of bad affordance is the numlock button on my laptop's keyboard.
 
-![Numlock button](/images/locknum.jpg)
+![Numlock button](/images/insert.jpg)
 
 The problem is that I can't see if the num lock is activated or not. A way to improve this design would be to add a small LED indicator to inform the user about the current mode.
 

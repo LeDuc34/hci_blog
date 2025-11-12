@@ -15,6 +15,8 @@ series = []
 
 ## Lecture 4
 
+![Dr. Young-Ho Kim](/images/kim.jpg)
+
 Dr. Young-Ho Kim is a Research Scientist at NAVER AI Lab leading the Human-Computer Interaction Research Group. His work focuses on an important area of HCI that bridges personal wellbeing and artificial intelligence.
 
 ### Current Research Focus
@@ -79,7 +81,9 @@ A room where the computer controls the existence of matter:
 
 **What's most striking**: He understood computers aren't just for calculation, but for letting us **experience concepts impossible in the physical world**. That's exactly our reality today.
 
-## Lecture 6: Microsoft Kinect
+## Lecture 6: Microsoft 
+
+![](/images/kinect.png)
 
 **What it was:** A motion-sensing input device for Xbox that let you control games and navigate menus using body movements and voice commands, eliminating the need for a traditional controller.
 
