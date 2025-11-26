@@ -82,6 +82,7 @@ jobs:
           hugo \
             --gc \
             --minify \
+            --baseURL "https://leduc34.github.io/hci_blog/" \
             --cacheDir "${{ runner.temp }}/hugo_cache"
       - name: Cache save
         id: cache-save
