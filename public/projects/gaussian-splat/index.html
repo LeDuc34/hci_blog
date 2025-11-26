@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  LAB gaussian splatting · victormasseboeuf
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Victor Masseboeuf">
+<meta name="description" content="
+  My First Experience with 3D Gaussian Splatting: The Bicycle Dataset
+  
+    
+    Link to heading
+  
+
+Recently, I had the opportunity to experiment with 3D Gaussian Splatting, a revolutionary rendering technique developed by INRIA&rsquo;s GraphDeco team. This technology has been making waves in the computer graphics community for its ability to produce photorealistic novel view synthesis with unprecedented speed and quality.
+
+  What is 3D Gaussian Splatting?
+  
+    
+    Link to heading
+  
+
+3D Gaussian Splatting is a novel approach to representing and rendering 3D scenes. Unlike traditional mesh-based or neural radiance field (NeRF) methods, it represents scenes as a collection of 3D Gaussian primitives. Each Gaussian is defined by:">
+<meta name="keywords" content="blog,developer,personal">
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="LAB gaussian splatting">
+  <meta name="twitter:description" content="My First Experience with 3D Gaussian Splatting: The Bicycle DatasetLink to headingRecently, I had the opportunity to experiment with 3D Gaussian Splatting, a revolutionary rendering technique developed by INRIA’s GraphDeco team. This technology has been making waves in the computer graphics community for its ability to produce photorealistic novel view synthesis with unprecedented speed and quality.
+What is 3D Gaussian Splatting?Link to heading3D Gaussian Splatting is a novel approach to representing and rendering 3D scenes. Unlike traditional mesh-based or neural radiance field (NeRF) methods, it represents scenes as a collection of 3D Gaussian primitives. Each Gaussian is defined by:">
+
+<meta property="og:url" content="https://leduc34.github.io/hci_blog/projects/gaussian-splat/">
+  <meta property="og:site_name" content="victormasseboeuf">
+  <meta property="og:title" content="LAB gaussian splatting">
+  <meta property="og:description" content="My First Experience with 3D Gaussian Splatting: The Bicycle DatasetLink to headingRecently, I had the opportunity to experiment with 3D Gaussian Splatting, a revolutionary rendering technique developed by INRIA’s GraphDeco team. This technology has been making waves in the computer graphics community for its ability to produce photorealistic novel view synthesis with unprecedented speed and quality.
+What is 3D Gaussian Splatting?Link to heading3D Gaussian Splatting is a novel approach to representing and rendering 3D scenes. Unlike traditional mesh-based or neural radiance field (NeRF) methods, it represents scenes as a collection of 3D Gaussian primitives. Each Gaussian is defined by:">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="projects">
+    <meta property="article:published_time" content="2025-11-25T15:16:04+02:00">
+    <meta property="article:modified_time" content="2025-11-25T15:16:04+02:00">
+
+
+
+
+<link rel="canonical" href="https://leduc34.github.io/hci_blog/projects/gaussian-splat/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/hci_blog/css/coder.min.022594d625780e2edf64581b893d32cb35c11de5d88953ea4ad3c2e45451e214.css" integrity="sha256-AiWU1iV4Di7fZFgbiT0yyzXBHeXYiVPqStPC5FRR4hQ=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/hci_blog/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="https://leduc34.github.io/hci_blog/">
+      victormasseboeuf
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/hci_blog/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/hci_blog/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/hci_blog/projects/">Projects</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container page">
+  <article>
+    <header>
+      <h1 class="title">
+        <a class="title-link" href="https://leduc34.github.io/hci_blog/projects/gaussian-splat/">
+          LAB gaussian splatting
+        </a>
+      </h1>
+    </header>
+
+    <h1 id="my-first-experience-with-3d-gaussian-splatting-the-bicycle-dataset">
+  My First Experience with 3D Gaussian Splatting: The Bicycle Dataset
+  <a class="heading-link" href="#my-first-experience-with-3d-gaussian-splatting-the-bicycle-dataset">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>Recently, I had the opportunity to experiment with <strong>3D Gaussian Splatting</strong>, a revolutionary rendering technique developed by INRIA&rsquo;s GraphDeco team. This technology has been making waves in the computer graphics community for its ability to produce photorealistic novel view synthesis with unprecedented speed and quality.</p>
+<h2 id="what-is-3d-gaussian-splatting">
+  What is 3D Gaussian Splatting?
+  <a class="heading-link" href="#what-is-3d-gaussian-splatting">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>3D Gaussian Splatting is a novel approach to representing and rendering 3D scenes. Unlike traditional mesh-based or neural radiance field (NeRF) methods, it represents scenes as a collection of 3D Gaussian primitives. Each Gaussian is defined by:</p>
+<ul>
+<li><strong>Position</strong> in 3D space</li>
+<li><strong>Covariance</strong> (shape and orientation)</li>
+<li><strong>Color</strong> (spherical harmonics coefficients)</li>
+<li><strong>Opacity</strong> (alpha value)</li>
+</ul>
+<p>The key advantage? Real-time rendering speeds while maintaining high visual fidelity. Where NeRF-based methods might take seconds to render a single frame, Gaussian Splatting achieves real-time framerates.</p>
+<h2 id="setting-up-the-inria-implementation">
+  Setting Up the INRIA Implementation
+  <a class="heading-link" href="#setting-up-the-inria-implementation">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>I used the official implementation from <a href="https://github.com/graphdeco-inria/gaussian-splatting"  class="external-link" target="_blank" rel="noopener">INRIA&rsquo;s GraphDeco team</a>. The setup was relatively straightforward:</p>
+<ol>
+<li>Clone the repository</li>
+<li>Install dependencies (CUDA, PyTorch, and specific CUDA extensions)</li>
+<li>Prepare the dataset</li>
+<li>Train the model</li>
+<li>Render and visualize results</li>
+</ol>
+<p>The repository is well-documented, which made the initial setup smooth despite the complex mathematics underlying the technique.</p>
+<h2 id="hardware-setup">
+  Hardware Setup
+  <a class="heading-link" href="#hardware-setup">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>For this experiment, I used an <strong>RTX 3080 with 24GB of VRAM</strong>. This GPU proved to be more than capable for training Gaussian Splatting models:</p>
+<ul>
+<li>The 24GB of VRAM provided ample headroom for the training process</li>
+<li>CUDA acceleration made the optimization smooth and efficient</li>
+<li>No memory issues encountered during training or rendering</li>
+</ul>
+<p>If you&rsquo;re planning to experiment with Gaussian Splatting, I&rsquo;d recommend at least 12GB of VRAM, though 24GB gives you comfortable margins for larger scenes.</p>
+<h2 id="testing-with-the-bicycle-dataset">
+  Testing with the Bicycle Dataset
+  <a class="heading-link" href="#testing-with-the-bicycle-dataset">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>For my first experiment, I chose the <strong>Bicycle dataset</strong> - a classic benchmark in novel view synthesis. This dataset features a bicycle photographed from multiple angles, providing an excellent test case for evaluating 3D reconstruction quality.</p>
+<h3 id="training-process">
+  Training Process
+  <a class="heading-link" href="#training-process">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>The training phase involves optimizing the Gaussian parameters to match the input images. I ran the optimization for <strong>30,000 iterations</strong>:</p>
+<ul>
+<li>Training took approximately 30-45 minutes on the RTX 3080</li>
+<li>The optimization progressively refines both the geometry and appearance</li>
+<li>I could monitor the progress through periodic validation renders</li>
+<li>By 30,000 iterations, the model had converged to excellent visual quality</li>
+</ul>
+<p>Once training completed, the INRIA implementation outputs a <strong>PLY file</strong> containing all the Gaussian primitives - their positions, colors, covariances, and opacities. This single file encapsulates the entire 3D scene representation.</p>
+<h3 id="visualization-with-supersplat">
+  Visualization with SuperSplat
+  <a class="heading-link" href="#visualization-with-supersplat">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>The visualization process couldn&rsquo;t have been easier. I simply:</p>
+<ol>
+<li>Navigated to <a href="https://supersplat.at/editor"  class="external-link" target="_blank" rel="noopener">SuperSplat Editor</a></li>
+<li><strong>Drag and dropped</strong> the PLY file directly into the browser window</li>
+<li>The scene loaded instantly, ready for interactive exploration</li>
+</ol>
+<p>No installation, no configuration, no hassle. Just drag, drop, and explore.</p>
+<p><img src="/hci_blog/images/byc.png" alt="Bicycle 3D Gaussian Splatting - 30k iterations">
+<em>The bicycle model after 30,000 iterations, visualized in SuperSplat Editor</em></p>
+<h3 id="results-and-observations">
+  Results and Observations
+  <a class="heading-link" href="#results-and-observations">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>The results were impressive:</p>
+<p><strong>Quality</strong>: The reconstruction captured fine details of the bicycle, including spokes, reflections, and intricate geometry. The photorealistic quality of the renders was remarkable.</p>
+<p><strong>Speed</strong>: Once loaded in SuperSplat, I could navigate through the scene in real-time. The ability to freely orbit around the bicycle and inspect it from any angle with smooth framerates was truly impressive.</p>
+<p><strong>Workflow simplicity</strong>: The entire pipeline - train locally, export PLY, visualize in browser - is remarkably streamlined.</p>
+<p><strong>Artifacts</strong>: While generally excellent, I noticed occasional artifacts in areas with complex reflections or very thin structures. This is expected given the nature of the representation.</p>
+<h3 id="why-supersplat">
+  Why SuperSplat?
+  <a class="heading-link" href="#why-supersplat">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p><a href="https://supersplat.at/editor"  class="external-link" target="_blank" rel="noopener">SuperSplat</a> has become my go-to tool for visualizing Gaussian Splatting results because:</p>
+<ul>
+<li><strong>Browser-based</strong>: No installation needed, works directly in the browser</li>
+<li><strong>Drag and drop</strong>: Just drop your PLY file and you&rsquo;re done</li>
+<li><strong>Interactive</strong>: Real-time navigation and inspection</li>
+<li><strong>User-friendly</strong>: Intuitive controls for rotation, zoom, and panning</li>
+<li><strong>Performance</strong>: Smooth rendering even for complex scenes</li>
+<li><strong>Sharing</strong>: Easy to share results with others who don&rsquo;t have technical setups</li>
+</ul>
+<h2 id="key-takeaways">
+  Key Takeaways
+  <a class="heading-link" href="#key-takeaways">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Working with 3D Gaussian Splatting taught me several important lessons:</p>
+<ol>
+<li>
+<p><strong>The power of explicit representations</strong>: Unlike implicit neural representations, the explicit nature of Gaussians allows for faster optimization and rendering.</p>
+</li>
+<li>
+<p><strong>Real-time potential</strong>: The ability to render at interactive framerates opens up numerous applications in AR/VR, gaming, and virtual production.</p>
+</li>
+<li>
+<p><strong>Accessible visualization</strong>: The combination of PLY export and web-based viewers like SuperSplat makes sharing results incredibly easy.</p>
+</li>
+<li>
+<p><strong>Hardware considerations</strong>: A modern GPU with sufficient VRAM is essential, but you don&rsquo;t need top-of-the-line hardware to get excellent results.</p>
+</li>
+<li>
+<p><strong>Iteration count matters</strong>: 30,000 iterations provided excellent results for the bicycle dataset, though simpler scenes might converge faster while more complex ones could benefit from additional training.</p>
+</li>
+</ol>
+<h2 id="technical-details">
+  Technical Details
+  <a class="heading-link" href="#technical-details">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>For those interested in reproducing these results:</p>
+<ul>
+<li><strong>Dataset</strong>: Bicycle (from the original Gaussian Splatting paper)</li>
+<li><strong>GPU</strong>: NVIDIA RTX 3080 24GB</li>
+<li><strong>Iterations</strong>: 30,000</li>
+<li><strong>Training time</strong>: ~30-45 minutes</li>
+<li><strong>Output format</strong>: PLY file</li>
+<li><strong>Visualization</strong>: SuperSplat Editor (drag and drop)</li>
+</ul>
+<h2 id="the-complete-workflow">
+  The Complete Workflow
+  <a class="heading-link" href="#the-complete-workflow">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Here&rsquo;s the end-to-end process I followed:</p>
+<ol>
+<li><strong>Setup</strong>: Install INRIA&rsquo;s Gaussian Splatting implementation</li>
+<li><strong>Prepare data</strong>: Use the bicycle dataset</li>
+<li><strong>Train</strong>: Run training for 30,000 iterations on RTX 3080</li>
+<li><strong>Export</strong>: Training automatically generates a PLY file</li>
+<li><strong>Visualize</strong>: Drag and drop the PLY file onto SuperSplat</li>
+<li><strong>Explore</strong>: Navigate the 3D scene in real-time in your browser</li>
+</ol>
+<p>The entire workflow is surprisingly accessible, even for those new to novel view synthesis.</p>
+<h2 id="future-experiments">
+  Future Experiments
+  <a class="heading-link" href="#future-experiments">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>This initial experiment has opened up several directions I&rsquo;d like to explore:</p>
+<ul>
+<li>Testing with custom datasets and challenging scenarios</li>
+<li>Experimenting with different iteration counts and optimization parameters</li>
+<li>Trying different GPU configurations to understand performance scaling</li>
+<li>Integrating Gaussian Splatting into interactive applications</li>
+<li>Comparing performance with other novel view synthesis methods</li>
+<li>Exploring compression techniques to reduce PLY file size</li>
+</ul>
+<h2 id="conclusion">
+  Conclusion
+  <a class="heading-link" href="#conclusion">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>3D Gaussian Splatting represents an exciting evolution in 3D reconstruction and rendering. The INRIA implementation is robust and accessible, making it an excellent starting point for anyone interested in exploring this technology. The bicycle dataset served as a perfect introduction, demonstrating both the strengths and current limitations of the approach.</p>
+<p>The combination of local training with a capable GPU like the RTX 3080 and browser-based visualization with SuperSplat creates a powerful workflow. After 30,000 iterations, the results speak for themselves - photorealistic quality with real-time interaction, all accessible through a simple drag and drop.</p>
+<p>If you&rsquo;re interested in novel view synthesis, photogrammetry, or real-time rendering, I highly recommend giving Gaussian Splatting a try. The technology is rapidly evolving, and we&rsquo;re likely just scratching the surface of its potential applications.</p>
+<hr>
+<p><em>Have you experimented with 3D Gaussian Splatting? What GPU are you using? Let me know in the comments!</em></p>
+<h2 id="resources">
+  Resources
+  <a class="heading-link" href="#resources">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ul>
+<li><a href="https://github.com/graphdeco-inria/gaussian-splatting"  class="external-link" target="_blank" rel="noopener">INRIA Gaussian Splatting Repository</a></li>
+<li><a href="https://supersplat.at/editor"  class="external-link" target="_blank" rel="noopener">SuperSplat Editor</a></li>
+<li><a href="https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/"  class="external-link" target="_blank" rel="noopener">Original Paper</a></li>
+</ul>
+
+  </article>
+</section>
+
+  
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2019 -
+    
+    2025
+     Victor Masseboeuf 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/hci_blog/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>
