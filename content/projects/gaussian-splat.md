@@ -73,7 +73,7 @@ The visualization process couldn't have been easier. I simply:
 
 No installation, no configuration, no hassle. Just drag, drop, and explore.
 
-![Bicycle 3D Gaussian Splatting - 30k iterations](/hci_blog/images/byc.PNG)
+![Bicycle 3D Gaussian Splatting - 30k iterations](/hci_blog/images/byc.png)
 *The bicycle model after 30,000 iterations, visualized in SuperSplat Editor*
 
 ### Results and Observations
