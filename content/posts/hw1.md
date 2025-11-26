@@ -19,7 +19,7 @@ series = []
 
 An example of bad affordance is the numlock button on my laptop's keyboard.
 
-![Numlock button](/images/insert.jpg)
+![Numlock button](/hci_blog/images/insert.jpg)
 
 The problem is that I can't see if the num lock is activated or not. A way to improve this design would be to add a small LED indicator to inform the user about the current mode.
 
@@ -33,7 +33,7 @@ While it might seem excessive, it's actually quite fast and not very demanding f
 
 ### Digital Example
 
-![Gestalt law in digital application](/images/digital-glaw.png)
+![Gestalt law in digital application](/hci_blog/images/digital-glaw.png)
 *Image demonstrating gestalt principles in a digital application*
 
 We can see that the content below the Lecture's points is not clearly marked as belonging to the Lecture section. To improve this design, we could add indentation to the content and make the font size smaller to create a better visual hierarchy.
@@ -46,7 +46,7 @@ A physical example where gestalt principles went wrong is with the light switche
 
 An example of dark design I have found is with the API platform of OpenAI (similar behaviors can be found with other companies such as Anthropic, Google, etc.).
 
-![OpenAI dark design pattern](/images/dark-design-openai.png)
+![OpenAI dark design pattern](/hci_blog/images/dark-design-openai.png)
 
 You can see that I have a negative balance. This is problematic because I didn't authorize this overage—I think it's misleading. A more user-friendly approach would be to stop the inference before the amount is exceeded, or at least make this an option for users who want to avoid unexpected charges.
 

@@ -27,11 +27,11 @@ series = []
 
 **Screen Size Wars (2010-2017):** Displays grew from 4" to 6"+. Devices got thinner. Video streaming and social media demanded bigger screens.
 
-![Screen Size Wars](/images/large-phone.jpg)
+![Screen Size Wars](/hci_blog/images/large-phone.jpg)
 
 **Bezel Elimination (2017-Present):** Edge-to-edge displays with notches and punch-holes maximized screen real estate. Glass-sandwich designs became universal.
 
-![Bezel Elimination](/images/bezels.jpg)
+![Bezel Elimination](/hci_blog/images/bezels.jpg)
 
 ### Why Shapes Changed
 

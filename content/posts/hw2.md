@@ -15,7 +15,7 @@ series = []
 
 ## Lecture 4
 
-![Dr. Young-Ho Kim](/images/kim.jpg)
+![Dr. Young-Ho Kim](/hci_blog/images/kim.jpg)
 
 Dr. Young-Ho Kim is a Research Scientist at NAVER AI Lab leading the Human-Computer Interaction Research Group. His work focuses on an important area of HCI that bridges personal wellbeing and artificial intelligence.
 
