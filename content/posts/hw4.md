@@ -19,11 +19,11 @@ series = []
 
 **Early Era (2000-2007):** Physical keyboards dominated. Think BlackBerry and Nokia - thick devices with tiny screens because typing mattered more than viewing.
 
-<img src="/images/blackberry.jpg" alt="Early smartphones" width="100" height="200" style="display: block; margin: 0 auto;">
+<img src="/hci_blog/images/blackberry.jpg" alt="Early smartphones" width="100" height="200" style="display: block; margin: 0 auto;">
 
 **iPhone Revolution (2007-2010):** The shift to full touchscreen killed the keyboard. The 3.5-inch slab design became standard as content consumption replaced communication as the primary use.
 
-<img src="/images/iphone.jpeg" alt="iPhone Revolution" style="display: block; margin: 0 auto;">
+<img src="/hci_blog/images/iphone.jpeg" alt="iPhone Revolution" style="display: block; margin: 0 auto;">
 
 **Screen Size Wars (2010-2017):** Displays grew from 4" to 6"+. Devices got thinner. Video streaming and social media demanded bigger screens.
 
