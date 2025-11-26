@@ -2,41 +2,41 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/projects/ml-agents/</loc>
+    <loc>https://leduc34.github.io/hci_blog/projects/ml-agents/</loc>
     <lastmod>2025-11-19T15:16:04+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/projects/</loc>
+    <loc>https://leduc34.github.io/hci_blog/projects/</loc>
     <lastmod>2025-11-19T15:16:04+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://leduc34.github.io/hci_blog/</loc>
     <lastmod>2025-11-19T15:16:04+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/hw4/</loc>
+    <loc>https://leduc34.github.io/hci_blog/posts/hw4/</loc>
     <lastmod>2025-10-19T15:16:04+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/projects/hugo-lab/</loc>
+    <loc>https://leduc34.github.io/hci_blog/projects/hugo-lab/</loc>
     <lastmod>2025-10-19T15:16:04+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/</loc>
+    <loc>https://leduc34.github.io/hci_blog/posts/</loc>
     <lastmod>2025-10-19T15:16:04+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/hw3/</loc>
+    <loc>https://leduc34.github.io/hci_blog/posts/hw3/</loc>
     <lastmod>2025-10-18T15:16:04+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/hw2/</loc>
+    <loc>https://leduc34.github.io/hci_blog/posts/hw2/</loc>
     <lastmod>2025-10-11T15:16:04+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/hw1/</loc>
+    <loc>https://leduc34.github.io/hci_blog/posts/hw1/</loc>
     <lastmod>2025-09-18T15:16:04+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/about/</loc>
+    <loc>https://leduc34.github.io/hci_blog/about/</loc>
   </url><url>
-    <loc>http://localhost:1313/authors/</loc>
+    <loc>https://leduc34.github.io/hci_blog/authors/</loc>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://leduc34.github.io/hci_blog/categories/</loc>
   </url><url>
-    <loc>http://localhost:1313/series/</loc>
+    <loc>https://leduc34.github.io/hci_blog/series/</loc>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://leduc34.github.io/hci_blog/tags/</loc>
   </url>
 </urlset>

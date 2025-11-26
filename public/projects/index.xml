@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects on victormasseboeuf</title>
-    <link>http://localhost:1313/projects/</link>
+    <link>https://leduc34.github.io/hci_blog/projects/</link>
     <description>Recent content in Projects on victormasseboeuf</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Wed, 19 Nov 2025 15:16:04 +0200</lastBuildDate>
-    <atom:link href="http://localhost:1313/projects/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://leduc34.github.io/hci_blog/projects/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>LAB Implementing ML Agents in Unity 3D</title>
-      <link>http://localhost:1313/projects/ml-agents/</link>
+      <link>https://leduc34.github.io/hci_blog/projects/ml-agents/</link>
       <pubDate>Wed, 19 Nov 2025 15:16:04 +0200</pubDate>
-      <guid>http://localhost:1313/projects/ml-agents/</guid>
-      <description>&lt;h1 id=&#34;building-a-game-ai-with-unity-ml-agents-a-pong-post-mortem&#34;&gt;&#xD;&#xA;  Building a Game AI with Unity ML-Agents: A Pong Post-Mortem&#xD;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#building-a-game-ai-with-unity-ml-agents-a-pong-post-mortem&#34;&gt;&#xD;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xD;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h1&gt;&#xD;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/pong.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;&#xD;&#xA;  Introduction&#xD;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#introduction&#34;&gt;&#xD;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xD;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&#xD;&#xA;&lt;p&gt;Reinforcement learning in video games has fascinated developers since DeepMind demonstrated that AI could surpass humans at Atari games. Today, Unity ML-Agents makes this technology accessible to developers, allowing the creation of intelligent opponents without being a machine learning expert. In this article, I share my experience developing a Pong game with a trained AI, the challenges encountered, and the solutions found.&lt;/p&gt;</description>
+      <guid>https://leduc34.github.io/hci_blog/projects/ml-agents/</guid>
+      <description>&lt;h1 id=&#34;building-a-game-ai-with-unity-ml-agents-a-pong-post-mortem&#34;&gt;&#xD;&#xA;  Building a Game AI with Unity ML-Agents: A Pong Post-Mortem&#xD;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#building-a-game-ai-with-unity-ml-agents-a-pong-post-mortem&#34;&gt;&#xD;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xD;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h1&gt;&#xD;&#xA;&lt;p&gt;&lt;img src=&#34;https://leduc34.github.io/hci_blog/images/pong.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;&#xD;&#xA;  Introduction&#xD;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#introduction&#34;&gt;&#xD;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xD;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&#xD;&#xA;&lt;p&gt;Reinforcement learning in video games has fascinated developers since DeepMind demonstrated that AI could surpass humans at Atari games. Today, Unity ML-Agents makes this technology accessible to developers, allowing the creation of intelligent opponents without being a machine learning expert. In this article, I share my experience developing a Pong game with a trained AI, the challenges encountered, and the solutions found.&lt;/p&gt;</description>
     </item>
     <item>
       <title>LAB Hugo Setup</title>
-      <link>http://localhost:1313/projects/hugo-lab/</link>
+      <link>https://leduc34.github.io/hci_blog/projects/hugo-lab/</link>
       <pubDate>Sun, 19 Oct 2025 15:16:04 +0200</pubDate>
-      <guid>http://localhost:1313/projects/hugo-lab/</guid>
+      <guid>https://leduc34.github.io/hci_blog/projects/hugo-lab/</guid>
       <description>&lt;h2 id=&#34;introduction&#34;&gt;&#xD;&#xA;  Introduction&#xD;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#introduction&#34;&gt;&#xD;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xD;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&#xD;&#xA;&lt;p&gt;This guide presents the setup of a static blog with HUGO and its automatic deployment via GitHub Actions on GitHub Pages. This solution offers a modern, free, and fully automated workflow.&lt;/p&gt;&#xA;&lt;h2 id=&#34;process-overview&#34;&gt;&#xD;&#xA;  Process Overview&#xD;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#process-overview&#34;&gt;&#xD;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xD;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&#xD;&#xA;&lt;p&gt;The principle is simple: every time you push content to GitHub, an automatic action will compile your HUGO site and deploy it on GitHub Pages. You just write and push, the rest happens automatically!&lt;/p&gt;</description>
     </item>
   </channel>
