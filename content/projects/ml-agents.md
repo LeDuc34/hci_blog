@@ -13,6 +13,8 @@ series = []
 
 # Building a Game AI with Unity ML-Agents: A Pong Post-Mortem
 
+![](/images/pong.png)
+
 ## Introduction
 
 Reinforcement learning in video games has fascinated developers since DeepMind demonstrated that AI could surpass humans at Atari games. Today, Unity ML-Agents makes this technology accessible to developers, allowing the creation of intelligent opponents without being a machine learning expert. In this article, I share my experience developing a Pong game with a trained AI, the challenges encountered, and the solutions found.
@@ -185,6 +187,9 @@ Unity ML-Agents opens fascinating possibilities for game AI, and with patience a
 The key takeaway? Analyze problems before implementation, adapt your approach when needed, and don't give up when progress seems slow. CPU-only training is challenging but viable. Sometimes the solution requires not changing your approach, but giving it enough time to work.
 
 The complete project, including trained model weights, is available on [GitHub](https://github.com/LeDuc34/Pong) for those interested in exploring ML-Agents implementation.
+
+
+
 
 ---
 
