@@ -13,7 +13,7 @@ series = []
 
 # Building a Game AI with Unity ML-Agents: A Pong Post-Mortem
 
-![](/images/pong.png)
+![](hci_blog/images/pong.png)
 
 ## Introduction
 
