@@ -83,7 +83,7 @@ A room where the computer controls the existence of matter:
 
 ## Lecture 6: Microsoft 
 
-![](/images/kinect.png)
+![](images/kinect.png)
 
 **What it was:** A motion-sensing input device for Xbox that let you control games and navigate menus using body movements and voice commands, eliminating the need for a traditional controller.
 
