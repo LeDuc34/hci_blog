@@ -137,4 +137,4 @@ AR application for more complex cooking tasks requiring multiple simultaneous sk
 4. **Concrete use case**: Coffee preparation = familiar task with nuances
 
 
-<iframe src="/test.html" width="100%" height="700" style="border:none;"></iframe>
+<iframe src="/hci_blog/test.html" width="100%" height="700" style="border:none;"></iframe>
