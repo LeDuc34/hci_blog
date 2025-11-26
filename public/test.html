@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR Coffee Maker - Beginner Mode</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .ar-container {
+            width: 100%;
+            max-width: 800px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            color: #00f0ff;
+            font-size: 28px;
+            margin-bottom: 10px;
+            text-shadow: 0 0 20px rgba(0, 240, 255, 0.5);
+        }
+
+        .header .mode {
+            color: #fff;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #00f0ff, #00ff88);
+            border-radius: 10px;
+            transition: width 0.5s ease;
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.6);
+        }
+
+        .step-container {
+            position: relative;
+            min-height: 400px;
+        }
+
+        .step {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .step.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .step-number {
+            color: #00f0ff;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .step-title {
+            color: #fff;
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .highlight-zone {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 30px auto;
+            border: 3px solid #00f0ff;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 0 20px #00f0ff, 0 0 40px #00f0ff, inset 0 0 20px rgba(0, 240, 255, 0.2);
+                transform: scale(1);
+            }
+            50% {
+                box-shadow: 0 0 40px #00f0ff, 0 0 80px #00f0ff, inset 0 0 40px rgba(0, 240, 255, 0.3);
+                transform: scale(1.05);
+            }
+        }
+
+        .highlight-zone::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 2px solid #00f0ff;
+            border-radius: 50%;
+            animation: ripple 2s infinite;
+        }
+
+        @keyframes ripple {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        .highlight-icon {
+            font-size: 64px;
+        }
+
+        .instructions {
+            background: rgba(0, 0, 0, 0.3);
+            border-left: 4px solid #00f0ff;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .instructions p {
+            color: #fff;
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .instructions .detail {
+            color: #00ff88;
+            font-weight: bold;
+        }
+
+        .timer {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .timer-label {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .timer-display {
+            color: #00f0ff;
+            font-size: 48px;
+            font-weight: bold;
+            font-family: 'Courier New', monospace;
+            text-shadow: 0 0 20px rgba(0, 240, 255, 0.5);
+        }
+
+        .tip-box {
+            background: rgba(255, 193, 7, 0.1);
+            border: 2px solid #ffc107;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .tip-box .tip-icon {
+            color: #ffc107;
+            font-size: 20px;
+            margin-right: 10px;
+        }
+
+        .tip-box p {
+            color: #fff;
+            font-size: 14px;
+            display: inline;
+        }
+
+        .warning-box {
+            background: rgba(244, 67, 54, 0.1);
+            border: 2px solid #f44336;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .warning-box .warning-icon {
+            color: #f44336;
+            font-size: 20px;
+            margin-right: 10px;
+        }
+
+        .warning-box p {
+            color: #fff;
+            font-size: 14px;
+            display: inline;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            gap: 15px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-prev {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-prev:hover:not(:disabled) {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateX(-5px);
+        }
+
+        .btn-next {
+            background: linear-gradient(135deg, #00f0ff, #00ff88);
+            color: #1e3c72;
+            box-shadow: 0 4px 15px rgba(0, 240, 255, 0.4);
+        }
+
+        .btn-next:hover:not(:disabled) {
+            transform: translateX(5px);
+            box-shadow: 0 6px 20px rgba(0, 240, 255, 0.6);
+        }
+
+        .btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        .btn-start-timer {
+            width: 100%;
+            padding: 15px;
+            margin-top: 10px;
+            background: rgba(0, 240, 255, 0.2);
+            border: 2px solid #00f0ff;
+            color: #fff;
+            border-radius: 10px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-start-timer:hover {
+            background: rgba(0, 240, 255, 0.3);
+        }
+
+        .btn-start-timer.active {
+            background: rgba(0, 255, 136, 0.2);
+            border-color: #00ff88;
+        }
+
+        .completion {
+            text-align: center;
+            padding: 40px;
+        }
+
+        .completion h2 {
+            color: #00ff88;
+            font-size: 42px;
+            margin-bottom: 20px;
+            animation: celebrate 1s ease;
+        }
+
+        @keyframes celebrate {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .completion p {
+            color: #fff;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .checkmark {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 30px;
+            border: 4px solid #00ff88;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            color: #00ff88;
+            animation: checkPulse 2s infinite;
+        }
+
+        @keyframes checkPulse {
+            0%, 100% {
+                box-shadow: 0 0 20px #00ff88;
+            }
+            50% {
+                box-shadow: 0 0 40px #00ff88;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="ar-container">
+        <div class="header">
+            <h1>☕ AR Coffee Maker</h1>
+            <div class="mode">MODE DÉBUTANT - Guidage Détaillé</div>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressBar"></div>
+        </div>
+
+        <div class="step-container" id="stepContainer">
+            <!-- Étape 1 -->
+            <div class="step active" data-step="1">
+                <div class="step-number">Étape 1/7</div>
+                <div class="step-title">Faire bouillir l'eau</div>
+                
+                <div class="highlight-zone">
+                    <div class="highlight-icon">🫖</div>
+                </div>
+
+                <div class="instructions">
+                    <p>Remplir la bouilloire avec <span class="detail">500ml d'eau</span></p>
+                    <p>Chauffer jusqu'à <span class="detail">93°C</span> (juste avant ébullition)</p>
+                </div>
+
+                <div class="timer">
+                    <div class="timer-label">TEMPS ESTIMÉ</div>
+                    <div class="timer-display">5:00</div>
+                    <button class="btn-start-timer" onclick="startTimer(1, 300)">▶ Démarrer le timer</button>
+                </div>
+
+                <div class="tip-box">
+                    <span class="tip-icon">💡</span>
+                    <p><strong>Astuce Pro :</strong> Ne pas utiliser de l'eau bouillante (100°C) pour éviter de brûler le café</p>
+                </div>
+            </div>
+
+            <!-- Étape 2 -->
+            <div class="step" data-step="2">
+                <div class="step-number">Étape 2/7</div>
+                <div class="step-title">Ajouter le café moulu</div>
+                
+                <div class="highlight-zone">
+                    <div class="highlight-icon">☕</div>
+                </div>
+
+                <div class="instructions">
+                    <p>Verser <span class="detail">30g de café moulu</span> dans la French press</p>
+                    <p>Utiliser une <span class="detail">mouture grosse</span> (type gros sel)</p>
+                </div>
+
+                <div class="tip-box">
+                    <span class="tip-icon">💡</span>
+                    <p><strong>Astuce Pro :</strong> Ratio idéal = 60g de café par litre d'eau. Une mouture trop fine rendra le café amer</p>
+                </div>
+
+                <div class="warning-box">
+                    <span class="warning-icon">⚠️</span>
+                    <p><strong>Attention :</strong> Vérifier que la French press est propre et sèche</p>
+                </div>
+            </div>
+
+            <!-- Étape 3 -->
+            <div class="step" data-step="3">
+                <div class="step-number">Étape 3/7</div>
+                <div class="step-title">Verser l'eau en cercle</div>
+                
+                <div class="highlight-zone">
+                    <div class="highlight-icon">🌊</div>
+                </div>
+
+                <div class="instructions">
+                    <p>Verser l'eau en <span class="detail">mouvement circulaire</span></p>
+                    <p>Commencer du centre vers l'extérieur</p>
+                    <p>Saturer tout le café uniformément</p>
+                </div>
+
+                <div class="timer">
+                    <div class="timer-label">TEMPS DE VERSAGE</div>
+                    <div class="timer-display">0:30</div>
+                    <button class="btn-start-timer" onclick="startTimer(3, 30)">▶ Démarrer le timer</button>
+                </div>
+
+                <div class="tip-box">
+                    <span class="tip-icon">💡</span>
+                    <p><strong>Astuce Pro :</strong> Verser lentement et régulièrement pour une extraction uniforme</p>
+                </div>
+            </div>
+
+            <!-- Étape 4 -->
+            <div class="step" data-step="4">
+                <div class="step-number">Étape 4/7</div>
+                <div class="step-title">Remuer délicatement</div>
+                
+                <div class="highlight-zone">
+                    <div class="highlight-icon">🥄</div>
+                </div>
+
+                <div class="instructions">
+                    <p>Utiliser une <span class="detail">cuillère en bois ou plastique</span></p>
+                    <p>Remuer <span class="detail">3 à 4 fois</span> doucement</p>
+                    <p>Ne pas toucher le fond de la carafe</p>
+                </div>
+
+                <div class="warning-box">
+                    <span class="warning-icon">⚠️</span>
+                    <p><strong>Attention :</strong> Ne pas utiliser de cuillère en métal pour éviter de casser le verre</p>
+                </div>
+
+                <div class="tip-box">
+                    <span class="tip-icon">💡</span>
+                    <p><strong>Astuce Pro :</strong> Le but est de s'assurer que tout le café est en contact avec l'eau</p>
+                </div>
+            </div>
+
+            <!-- Étape 5 -->
+            <div class="step" data-step="5">
+                <div class="step-number">Étape 5/7</div>
+                <div class="step-title">Laisser infuser</div>
+                
+                <div class="highlight-zone">
+                    <div class="highlight-icon">⏱️</div>
+                </div>
+
+                <div class="instructions">
+                    <p>Placer le couvercle <span class="detail">sans appuyer sur le piston</span></p>
+                    <p>Laisser infuser pendant <span class="detail">4 minutes exactement</span></p>
+                </div>
+
+                <div class="timer">
+                    <div class="timer-label">TEMPS D'INFUSION</div>
+                    <div class="timer-display" id="brewTimer">4:00</div>
+                    <button class="btn-start-timer" onclick="startTimer(5, 240)">▶ Démarrer le timer</button>
+                </div>
+
+                <div class="tip-box">
+                    <span class="tip-icon">💡</span>
+                    <p><strong>Astuce Pro :</strong> Plus l'infusion est longue, plus le café sera fort. 4 min = équilibre parfait</p>
+                </div>
+
+                <div class="warning-box">
+                    <span class="warning-icon">⚠️</span>
+                    <p><strong>Important :</strong> Ne pas dépasser 5 minutes sous peine d'avoir un café trop amer</p>
+                </div>
+            </div>
+
+            <!-- Étape 6 -->
+            <div class="step" data-step="6">
+                <div class="step-number">Étape 6/7</div>
+                <div class="step-title">Presser le piston</div>
+                
+                <div class="highlight-zone">
+                    <div class="highlight-icon">⬇️</div>
+                </div>
+
+                <div class="instructions">
+                    <p>Appuyer <span class="detail">lentement et uniformément</span></p>
+                    <p>Descendre le piston en <span class="detail">20-30 secondes</span></p>
+                    <p>Ne pas forcer si vous sentez une résistance</p>
+                </div>
+
+                <div class="timer">
+                    <div class="timer-label">TEMPS DE PRESSION</div>
+                    <div class="timer-display">0:30</div>
+                    <button class="btn-start-timer" onclick="startTimer(6, 30)">▶ Démarrer le timer</button>
+                </div>
+
+                <div class="warning-box">
+                    <span class="warning-icon">⚠️</span>
+                    <p><strong>Attention :</strong> Si le piston descend trop vite, la mouture est trop grosse. S'il est difficile à presser, elle est trop fine</p>
+                </div>
+
+                <div class="tip-box">
+                    <span class="tip-icon">💡</span>
+                    <p><strong>Astuce Pro :</strong> Une pression lente évite la sur-extraction et l'amertume</p>
+                </div>
+            </div>
+
+            <!-- Étape 7 -->
+            <div class="step" data-step="7">
+                <div class="step-number">Étape 7/7</div>
+                <div class="step-title">Servir immédiatement</div>
+                
+                <div class="highlight-zone">
+                    <div class="highlight-icon">☕</div>
+                </div>
+
+                <div class="instructions">
+                    <p>Verser le café <span class="detail">immédiatement dans les tasses</span></p>
+                    <p>Ne pas laisser le café dans la French press</p>
+                </div>
+
+                <div class="warning-box">
+                    <span class="warning-icon">⚠️</span>
+                    <p><strong>Important :</strong> Le café continue à infuser même après avoir pressé le piston. Le transférer rapidement évite l'amertume</p>
+                </div>
+
+                <div class="tip-box">
+                    <span class="tip-icon">💡</span>
+                    <p><strong>Astuce Pro :</strong> Si vous ne servez pas tout de suite, transférer dans une carafe thermique</p>
+                </div>
+            </div>
+
+            <!-- Écran de complétion -->
+            <div class="step completion" data-step="8">
+                <div class="checkmark">✓</div>
+                <h2>Bravo ! 🎉</h2>
+                <p>Vous avez terminé votre café French press parfait !</p>
+                <p style="font-size: 14px; opacity: 0.8; margin-top: 20px;">
+                    Avec de la pratique, vous n'aurez bientôt plus besoin du mode débutant.
+                </p>
+                <button class="btn btn-next" onclick="resetPrototype()" style="margin-top: 30px;">
+                    🔄 Recommencer
+                </button>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button class="btn btn-prev" id="btnPrev" onclick="previousStep()">◀ Précédent</button>
+            <button class="btn btn-next" id="btnNext" onclick="nextStep()">Suivant ▶</button>
+        </div>
+    </div>
+
+    <script>
+        let currentStep = 1;
+        const totalSteps = 7;
+        let timers = {};
+
+        function updateUI() {
+            // Cacher toutes les étapes
+            document.querySelectorAll('.step').forEach(step => {
+                step.classList.remove('active');
+            });
+
+            // Afficher l'étape courante
+            const activeStep = document.querySelector(`.step[data-step="${currentStep}"]`);
+            if (activeStep) {
+                activeStep.classList.add('active');
+            }
+
+            // Mettre à jour la barre de progression
+            const progress = (currentStep / (totalSteps + 1)) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+
+            // Gérer les boutons
+            document.getElementById('btnPrev').disabled = currentStep === 1;
+            
+            if (currentStep === totalSteps) {
+                document.getElementById('btnNext').textContent = 'Terminer ✓';
+            } else if (currentStep > totalSteps) {
+                document.getElementById('btnNext').style.display = 'none';
+                document.getElementById('btnPrev').style.display = 'none';
+            } else {
+                document.getElementById('btnNext').textContent = 'Suivant ▶';
+            }
+        }
+
+        function nextStep() {
+            if (currentStep <= totalSteps) {
+                currentStep++;
+                updateUI();
+            }
+        }
+
+        function previousStep() {
+            if (currentStep > 1) {
+                currentStep--;
+                updateUI();
+            }
+        }
+
+        function startTimer(stepNum, duration) {
+            const button = event.target;
+            const timerDisplay = button.previousElementSibling;
+            
+            // Si un timer est déjà en cours pour cette étape, l'arrêter
+            if (timers[stepNum]) {
+                clearInterval(timers[stepNum]);
+                delete timers[stepNum];
+                button.textContent = '▶ Démarrer le timer';
+                button.classList.remove('active');
+                return;
+            }
+
+            button.textContent = '⏸ Arrêter';
+            button.classList.add('active');
+
+            let timeLeft = duration;
+
+            timers[stepNum] = setInterval(() => {
+                timeLeft--;
+
+                const minutes = Math.floor(timeLeft / 60);
+                const seconds = timeLeft % 60;
+                timerDisplay.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+
+                if (timeLeft <= 0) {
+                    clearInterval(timers[stepNum]);
+                    delete timers[stepNum];
+                    button.textContent = '✓ Terminé';
+                    button.style.background = 'rgba(0, 255, 136, 0.3)';
+                    
+                    // Animation de fin
+                    timerDisplay.style.animation = 'celebrate 1s ease';
+                    setTimeout(() => {
+                        timerDisplay.style.animation = '';
+                    }, 1000);
+                }
+            }, 1000);
+        }
+
+        function resetPrototype() {
+            currentStep = 1;
+            // Arrêter tous les timers
+            Object.values(timers).forEach(timer => clearInterval(timer));
+            timers = {};
+            
+            document.getElementById('btnNext').style.display = '';
+            document.getElementById('btnPrev').style.display = '';
+            
+            updateUI();
+        }
+
+        // Initialiser
+        updateUI();
+
+        // Navigation au clavier
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' && currentStep <= totalSteps) {
+                nextStep();
+            } else if (e.key === 'ArrowLeft' && currentStep > 1) {
+                previousStep();
+            }
+        });
+    </script>
+</body>
+</html>

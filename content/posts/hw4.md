@@ -1,7 +1,7 @@
 +++
 draft = false
 date = 2025-10-19T15:16:04+02:00
-title = "HW4 - Three Lectures on Computing Evolution"
+title = "HW4"
 description = "Analysis of smartphone evolution, ubiquitous computing, and future MR applications"
 slug = ""
 authors = []

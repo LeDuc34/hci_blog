@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <title>
+  LAB Hugo Setup · victormasseboeuf
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Victor Masseboeuf">
+<meta name="description" content="
+  Introduction
+  
+    
+    Link to heading
+  
+
+This guide presents the setup of a static blog with HUGO and its automatic deployment via GitHub Actions on GitHub Pages. This solution offers a modern, free, and fully automated workflow.
+
+  Process Overview
+  
+    
+    Link to heading
+  
+
+The principle is simple: every time you push content to GitHub, an automatic action will compile your HUGO site and deploy it on GitHub Pages. You just write and push, the rest happens automatically!">
+<meta name="keywords" content="blog,developer,personal">
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="LAB Hugo Setup">
+  <meta name="twitter:description" content="IntroductionLink to headingThis guide presents the setup of a static blog with HUGO and its automatic deployment via GitHub Actions on GitHub Pages. This solution offers a modern, free, and fully automated workflow.
+Process OverviewLink to headingThe principle is simple: every time you push content to GitHub, an automatic action will compile your HUGO site and deploy it on GitHub Pages. You just write and push, the rest happens automatically!">
+
+<meta property="og:url" content="http://localhost:1313/posts/hugo-lab/">
+  <meta property="og:site_name" content="victormasseboeuf">
+  <meta property="og:title" content="LAB Hugo Setup">
+  <meta property="og:description" content="IntroductionLink to headingThis guide presents the setup of a static blog with HUGO and its automatic deployment via GitHub Actions on GitHub Pages. This solution offers a modern, free, and fully automated workflow.
+Process OverviewLink to headingThe principle is simple: every time you push content to GitHub, an automatic action will compile your HUGO site and deploy it on GitHub Pages. You just write and push, the rest happens automatically!">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-10-19T15:16:04+02:00">
+    <meta property="article:modified_time" content="2025-10-19T15:16:04+02:00">
+
+
+
+
+<link rel="canonical" href="http://localhost:1313/posts/hugo-lab/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.css" media="screen">
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.css" media="screen">
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="http://localhost:1313/">
+      victormasseboeuf
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/projects/">Projects</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/contact/">Contact me</a>
+            </li>
+          
+        
+        
+          
+          
+          
+            
+          
+            
+              
+                <li class="navigation-item menu-separator">
+                  <span>|</span>
+                </li>
+                
+              
+              <li class="navigation-item">
+                <a href="/pt-br/">🇧🇷</a>
+              </li>
+            
+          
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="http://localhost:1313/posts/hugo-lab/">
+              LAB Hugo Setup
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+              <time datetime="2025-10-19T15:16:04&#43;02:00">
+                October 19, 2025
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              4-minute read
+            </span>
+          </div>
+          
+          
+          
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <h2 id="introduction">
+  Introduction
+  <a class="heading-link" href="#introduction">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>This guide presents the setup of a static blog with HUGO and its automatic deployment via GitHub Actions on GitHub Pages. This solution offers a modern, free, and fully automated workflow.</p>
+<h2 id="process-overview">
+  Process Overview
+  <a class="heading-link" href="#process-overview">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>The principle is simple: every time you push content to GitHub, an automatic action will compile your HUGO site and deploy it on GitHub Pages. You just write and push, the rest happens automatically!</p>
+<h2 id="step-1-create-your-hugo-site">
+  Step 1: Create Your HUGO Site
+  <a class="heading-link" href="#step-1-create-your-hugo-site">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="installation-and-initialization">
+  Installation and Initialization
+  <a class="heading-link" href="#installation-and-initialization">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Install HUGO on your machine (via Homebrew, apt-get, or your OS&rsquo;s package manager), then create your site with the command <code>hugo new site my-blog</code>. Then initialize a Git repository in this folder.</p>
+<h3 id="choose-a-theme">
+  Choose a Theme
+  <a class="heading-link" href="#choose-a-theme">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>HUGO works with themes. Visit <a href="https://themes.gohugo.io/"  class="external-link" target="_blank" rel="noopener">themes.gohugo.io</a> to choose one. Most are installed as a Git submodule in the <code>themes/</code> folder. Personally, I use PaperMod for its simplicity and speed.</p>
+<h3 id="basic-configuration">
+  Basic Configuration
+  <a class="heading-link" href="#basic-configuration">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>The <code>hugo.toml</code> (or <code>config.toml</code>) file contains the global configuration: your base URL, site title, theme used, menus, etc. <strong>Important point</strong>: the base URL must match your future GitHub Pages site (<code>https://username.github.io/repo-name/</code>).</p>
+<h3 id="create-content">
+  Create Content
+  <a class="heading-link" href="#create-content">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Use <code>hugo new posts/my-article.md</code> to create an article. HUGO generates a markdown file with front matter (YAML metadata). Remove <code>draft: true</code> when the article is ready to be published.</p>
+<h2 id="step-2-host-on-github">
+  Step 2: Host on GitHub
+  <a class="heading-link" href="#step-2-host-on-github">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="create-the-repository">
+  Create the Repository
+  <a class="heading-link" href="#create-the-repository">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Create a new public repository on GitHub. The repository must be public to benefit from GitHub Pages for free. Then connect your local project to this remote repository and push your code.</p>
+<h3 id="project-structure">
+  Project Structure
+  <a class="heading-link" href="#project-structure">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Your project will have this structure:</p>
+<ul>
+<li><code>content/</code>: your articles and pages</li>
+<li><code>themes/</code>: the chosen theme</li>
+<li><code>static/</code>: images and static files</li>
+<li><code>hugo.toml</code>: configuration</li>
+<li><code>.github/workflows/</code>: the automation file (which we&rsquo;ll create)</li>
+</ul>
+<h2 id="step-3-automate-with-github-actions">
+  Step 3: Automate with GitHub Actions
+  <a class="heading-link" href="#step-3-automate-with-github-actions">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="the-workflow-file">
+  The Workflow File
+  <a class="heading-link" href="#the-workflow-file">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Create the file <code>.github/workflows/deploy.yml</code>. This file contains the instructions for GitHub Actions. It defines:</p>
+<p><strong>When to trigger</strong>: On every push to the <code>main</code> branch</p>
+<p><strong>What it should do</strong>:</p>
+<ol>
+<li>Install HUGO on GitHub&rsquo;s server</li>
+<li>Fetch your code (including submodules if you have any)</li>
+<li>Compile the HUGO site in production mode</li>
+<li>Deploy the result to GitHub Pages</li>
+</ol>
+<p>The workflow typically includes two jobs: one for the build, one for deployment. Official GitHub actions (<code>actions/checkout</code>, <code>actions/configure-pages</code>, etc.) greatly facilitate the configuration.</p>
+<h3 id="required-permissions">
+  Required Permissions
+  <a class="heading-link" href="#required-permissions">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>The workflow needs specific permissions to write to GitHub Pages. These permissions are defined in the YAML file with the <code>contents: read</code> and <code>pages: write</code> parameters.</p>
+<h2 id="step-4-enable-github-pages">
+  Step 4: Enable GitHub Pages
+  <a class="heading-link" href="#step-4-enable-github-pages">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>In your GitHub repository settings:</p>
+<ol>
+<li>Go to <strong>Settings</strong> &gt; <strong>Pages</strong></li>
+<li>Select <strong>GitHub Actions</strong> as the source (not &ldquo;Deploy from a branch&rdquo;)</li>
+<li>Save</li>
+</ol>
+<p>From the first push, the workflow starts and your site is deployed automatically!</p>
+<h2 id="daily-workflow">
+  Daily Workflow
+  <a class="heading-link" href="#daily-workflow">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Once everything is configured, publishing is super simple:</p>
+<ol>
+<li>Write a new article with <code>hugo new posts/title.md</code></li>
+<li>Test locally with <code>hugo server -D</code></li>
+<li>Commit and push to GitHub</li>
+<li>GitHub Actions does everything else automatically</li>
+<li>Your article is online in 1-2 minutes!</li>
+</ol>
+<h2 id="advanced-features">
+  Advanced Features
+  <a class="heading-link" href="#advanced-features">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="custom-domain">
+  Custom Domain
+  <a class="heading-link" href="#custom-domain">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>You can use your own domain by creating a <code>static/CNAME</code> file with your domain, then configuring the DNS with your registrar. GitHub Pages automatically manages the SSL certificate via Let&rsquo;s Encrypt.</p>
+<h3 id="optimizations">
+  Optimizations
+  <a class="heading-link" href="#optimizations">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>The workflow can be optimized with caching to speed up recurring builds. You can also configure HUGO to minify HTML/CSS/JS in production.</p>
+<h3 id="multiple-environments">
+  Multiple Environments
+  <a class="heading-link" href="#multiple-environments">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>You can create different workflows for a dev branch (preview) and the main branch (production), allowing you to test before publishing.</p>
+<h2 id="points-of-attention">
+  Points of Attention
+  <a class="heading-link" href="#points-of-attention">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="base-url">
+  Base URL
+  <a class="heading-link" href="#base-url">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>The most common error is an incorrect <code>baseURL</code> configuration in <code>hugo.toml</code>. It must exactly match the final URL of your site, with the trailing slash.</p>
+<h3 id="themes-as-submodules">
+  Themes as Submodules
+  <a class="heading-link" href="#themes-as-submodules">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>If your theme is a Git submodule, make sure the GitHub Actions workflow fetches them properly with <code>submodules: recursive</code> in the <code>checkout</code> action.</p>
+<h3 id="draft-files">
+  Draft Files
+  <a class="heading-link" href="#draft-files">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Articles with <code>draft: true</code> are not compiled in production. Remember to remove this line before pushing.</p>
+<h2 id="why-this-solution">
+  Why This Solution?
+  <a class="heading-link" href="#why-this-solution">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>This stack offers several major advantages:</p>
+<p><strong>Performance</strong>: Ultra-fast static sites, no database or server to manage</p>
+<p><strong>Free</strong>: GitHub Pages is free for public repositories, unlimited bandwidth</p>
+<p><strong>Version Control</strong>: Your entire blog history is in Git, impossible to lose content</p>
+<p><strong>Simplicity</strong>: No complex CMS, just Markdown and Git</p>
+<p><strong>Modern CI/CD</strong>: Professional workflow with automatic deployment</p>
+<p><strong>Security</strong>: No attack surface, no plugins to update</p>
+<h2 id="resources">
+  Resources
+  <a class="heading-link" href="#resources">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ul>
+<li><a href="https://gohugo.io/documentation/"  class="external-link" target="_blank" rel="noopener">HUGO Documentation</a></li>
+<li><a href="https://themes.gohugo.io/"  class="external-link" target="_blank" rel="noopener">HUGO Themes</a></li>
+<li><a href="https://docs.github.com/en/actions"  class="external-link" target="_blank" rel="noopener">GitHub Actions</a></li>
+<li><a href="https://docs.github.com/en/pages"  class="external-link" target="_blank" rel="noopener">GitHub Pages</a></li>
+</ul>
+<h2 id="conclusion">
+  Conclusion
+  <a class="heading-link" href="#conclusion">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>With HUGO and GitHub Actions, you get a professional blog that deploys automatically. No need to worry about hosting, updates, or security. Focus on what matters: writing quality content.</p>
+<p>The initial setup takes 30 minutes, but then everything is automated. It&rsquo;s the ideal solution for a technical blog, portfolio, or project documentation.</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2019 -
+    
+    2025
+     Victor Masseboeuf 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.js"></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>

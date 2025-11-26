@@ -16,7 +16,7 @@ series = []
 **Project**: Enhancing human abilities in the age of augmented reality  
 **Focus**: AR Skill Overlay for manual task learning
 
----
+
 
 ## Problem Statement
 
@@ -24,7 +24,6 @@ Learning a new manual task can be frustrating and intimidating. Video tutorials 
 
 **Proposed Solution**: An AR system that overlays visual instructions directly onto the real environment, guiding the user step-by-step with contextual overlays.
 
----
 
 ## Idea 1: Beginner Mode - Detailed Guidance
 
@@ -62,8 +61,6 @@ Steps covered:
 ❌ Less efficient for experienced users  
 ❌ Lots of on-screen information  
 
----
-
 ## Idea 2: Expert Mode - Minimalist Interface
 
 ### Concept
@@ -92,7 +89,6 @@ Ideal for:
 ❌ Insufficient for true beginners  
 ❌ Risk of missing important steps  
 
----
 
 ## Idea 3: AR Skill Overlay Multi-Tasks - Advanced Cooking
 
@@ -130,7 +126,6 @@ AR application for more complex cooking tasks requiring multiple simultaneous sk
 ❌ More technically complex  
 ❌ Initial calibration required  
 
----
 
 ## Final Choice for Prototyping
 
@@ -140,3 +135,6 @@ AR application for more complex cooking tasks requiring multiple simultaneous sk
 2. **Immediate impact**: Solves a clear and universal problem
 3. **Ease of evaluation**: Testers will easily understand and interact
 4. **Concrete use case**: Coffee preparation = familiar task with nuances
+
+
+<iframe src="/test.html" width="100%" height="700" style="border:none;"></iframe>
