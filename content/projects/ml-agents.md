@@ -11,9 +11,12 @@ externalLink = ""
 series = []
 +++
 
-# Building a Game AI with Unity ML-Agents: A Pong Post-Mortem
 
 !["pong"](/hci_blog/images/pong.png)
+
+
+# Building a Game AI with Unity ML-Agents: A Pong Post-Mortem
+
 
 ## Introduction
 
